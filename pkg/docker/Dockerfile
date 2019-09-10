@@ -11,7 +11,7 @@
 # Node-8 is supported by all needed C++ packages
 FROM node:8 AS node-builder
 
-COPY ./pgadmin4/web/ /pgadmin4/web/
+#COPY ./pgadmin4/web/ /pgadmin4/web/
 WORKDIR /pgadmin4/web
 
 RUN yarn install --cache-folder ./ycache --verbose && \
@@ -25,7 +25,7 @@ FROM python:3.7-alpine3.9 as docs-builder
 RUN apk add --no-cache make build-base openssl-dev libffi-dev && \
     pip install --no-cache-dir sphinx flask_security flask_paranoid python-dateutil flask_sqlalchemy flask_gravatar flask_migrate simplejson cryptography
 
-COPY ./pgadmin4/ /pgadmin4
+#COPY ./pgadmin4/ /pgadmin4
 
 # Build the docs
 RUN LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 make -C /pgadmin4/docs/en_US -f Makefile.sphinx html

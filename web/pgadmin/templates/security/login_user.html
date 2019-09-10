@@ -4,7 +4,7 @@
  <img src="{{ url_for('static', filename='img/login.svg') }}" alt="{{ _('Login') }}">
 </div>
 {% endblock %}
-{% block panel_title %}{{ _('Login') }}{% endblock %}
+{% block panel_title %}{{ _('Login') }} THIS IS A MESSAGE TO SHOW I FORKED THE CODE, BY VL FOR ZETA{% endblock %}
 {% block panel_body %}
 {% if config.SERVER_MODE %}
 <form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">

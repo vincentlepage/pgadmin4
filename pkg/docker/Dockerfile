@@ -15,8 +15,8 @@ FROM node:8 AS node-builder
 WORKDIR /pgadmin4/web
 
 #RUN yarn install --cache-folder ./ycache --verbose && \
- #   yarn run bundle && \
- #   rm -rf ./ycache ./pgadmin/static/js/generated/.cache
+#    yarn run bundle && \
+#    rm -rf ./ycache ./pgadmin/static/js/generated/.cache
 
 # Build Sphinx documentation in separate container
 FROM python:3.7-alpine3.9 as docs-builder
